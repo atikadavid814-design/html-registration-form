@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Registration / Service Request Form</title>
+</head>
+<body>
+
+  <h1>Company Registration / Service Request Form</h1>
+  <p>Fields marked with * are required.</p>
+
+  <form method="post" action="#">
+
+    <!-- Section 1: Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <p>
+        <label for="fullname">Full Name *</label><br>
+        <input type="text" id="fullname" name="fullname"
+               required minlength="3" maxlength="60"
+               pattern="[A-Za-z .'\-]{3,60}"
+               title="Use letters only, 3 to 60 characters."
+               placeholder="e.g. Caleb Isaboke">
+      </p>
+
+      <p>
+        <label for="email">Email Address *</label><br>
+        <input type="email" id="email" name="email"
+               required maxlength="100"
+               placeholder="name@example.com">
+      </p>
+
+      <p>
+        <label for="phone">Phone Number *</label><br>
+        <input type="tel" id="phone" name="phone"
+               required minlength="10" maxlength="15"
+               pattern="[0-9+]{10,15}"
+               title="Enter 10 to 15 digits. A leading + is allowed."
+               placeholder="e.g. 0700000000">
+      </p>
+    </fieldset>
+
+    <!-- Section 2: Company Information -->
+    <fieldset>
+      <legend>Company Information</legend>
+
+      <p>
+        <label for="company">Company Name *</label><br>
+        <input type="text" id="company" name="company"
+               required minlength="2" maxlength="80">
+      </p>
+
+      <p>
+        <label for="website">Company Website</label><br>
+        <input type="url" id="website" name="website"
+               maxlength="100"
+               pattern="https?://.+"
+               title="Must start with http:// or https://"
+               placeholder="https://www.example.com">
+      </p>
+
+      <p>
+        <label for="size">Company Size *</label><br>
+        <select id="size" name="size" required>
+          <option value="">-- Select size --</option>
+          <option value="1-10">1 - 10 employees</option>
+          <option value="11-50">11 - 50 employees</option>
+          <option value="51-200">51 - 200 employees</option>
+          <option value="201-500">201 - 500 employees</option>
+          <option value="500+">More than 500 employees</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="industry">Industry *</label><br>
+        <input type="text" id="industry" name="industry"
+               required minlength="3" maxlength="50"
+               placeholder="e.g. Agriculture, Retail, Technology">
+      </p>
+    </fieldset>
+
+    <!-- Section 3: Service Request -->
+    <fieldset>
+      <legend>Service Request</legend>
+
+      <fieldset>
+        <legend>Service Type *</legend>
+        <input type="radio" id="service-web" name="service" value="web-development" required>
+        <label for="service-web">Web Development</label><br>
+
+        <input type="radio" id="service-support" name="service" value="it-support">
+        <label for="service-support">IT Support</label><br>
+
+        <input type="radio" id="service-consulting" name="service" value="consulting">
+        <label for="service-consulting">Consulting</label><br>
+
+        <input type="radio" id="service-training" name="service" value="training">
+        <label for="service-training">Training</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferred Contact Method</legend>
+        <input type="checkbox" id="contact-email" name="contact" value="email">
+        <label for="contact-email">Email</label><br>
+
+        <input type="checkbox" id="contact-phone" name="contact" value="phone">
+        <label for="contact-phone">Phone Call</label><br>
+
+        <input type="checkbox" id="contact-sms" name="contact" value="sms">
+        <label for="contact-sms">SMS</label>
+      </fieldset>
+
+      <p>
+        <label for="date">Appointment Date *</label><br>
+        <input type="date" id="date" name="date"
+               required min="2026-10-16" max="2027-12-31">
+      </p>
+
+      <p>
+        <label for="time">Appointment Time *</label><br>
+        <input type="time" id="time" name="time"
+               required min="08:00" max="17:00">
+        <br><small>Office hours: 08:00 to 17:00</small>
+      </p>
+
+      <p>
+        <label for="budget">Budget Range (USD) *</label><br>
+        <input type="number" id="budget" name="budget"
+               required min="100" max="100000" step="50"
+               placeholder="e.g. 1000">
+      </p>
+    </fieldset>
+
+    <!-- Section 4: Message and Agreement -->
+    <fieldset>
+      <legend>Message and Agreement</legend>
+
+      <p>
+        <label for="message">Additional Information</label><br>
+        <textarea id="message" name="message" rows="5" cols="40"
+                  minlength="10" maxlength="500"
+                  placeholder="Tell us more about your request (10 to 500 characters)"></textarea>
+      </p>
+
+      <p>
+        <input type="checkbox" id="terms" name="terms" value="agreed" required>
+        <label for="terms">I agree to the Terms and Conditions *</label>
+      </p>
+    </fieldset>
+
+    <p>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </p>
+
+  </form>
+
+</body>
+</html>
